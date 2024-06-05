@@ -436,7 +436,7 @@ else:
     train_model(model, trainloader, valloader, optimizer, custom_loss_fn, num_epochs=epochs, start_epoch=start_epoch, start_batch=start_batch, prev_loss=prev_loss, checkpoint_dir=checkpoint_dir)
 ```
 
-
+---
 ### c. Create a set of prompts (e.g., "This movie was", "The actors in the film") to guide the generation of movie reviews. You can choose any prompts from your own criteria.
 I used a prompts from the test dataset to compare the generated output and ground-truth reviews. Some have positive and negative words like or unlike their label is positive or negative. 
 ```
@@ -510,7 +510,12 @@ for review, batch in zip(generated_reviews, testloader):
 print(f"\nMean BLEU score: {round(sum(bleu_scores) / len(bleu_scores), 4)}")
 ```
 
+
+---
 ### d. Generate and report 30 movie reviews using the GPT 2 model and the prompts. Save the generated reviews as a list or a text file.
 
+
+
+---
 ### e. Evaluate your model using a BLEU metric https://huggingface.co/spaces/evaluate-metric/bleu with your testing dataset. Report the mean value of Bleu Scores from using the testing dataset. 
 We are going to use first 10 words of a review as prompts for your model and compare the generated text with the true text to compute the BLEU score.
